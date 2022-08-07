@@ -3,5 +3,6 @@ build
 *.py[cod]
 *.pyc
 *.pyo
+*.spec
 dist
 
