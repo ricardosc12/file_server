@@ -11,8 +11,13 @@ import json
 import socket
 from waitress import serve
 from werkzeug.utils import secure_filename 
-hostname=socket.gethostname()   
-IP=socket.gethostbyname(hostname)   
+
+def getIp():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    return s.getsockname()[0]
+
+IP=getIp()  
 
 TEMPLATES_AUTO_RELOAD = True
 
