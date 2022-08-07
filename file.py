@@ -17,7 +17,7 @@ def getIp():
     s.connect(("8.8.8.8", 80))
     return s.getsockname()[0]
 
-IP=getIp()  
+IP=getIp()
 
 TEMPLATES_AUTO_RELOAD = True
 

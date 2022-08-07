@@ -125,10 +125,13 @@ function handlerDragStart() {
 function handlerDragEnd(){
     TIMER = 25
     startMatrix()
+    console.log("SAIU")
 }
 
 function handlerDrop(ev) { 
     ev.preventDefault();
+    TIMER = 25
+    startMatrix()
     var data = new FormData();
     if (ev.dataTransfer.items) {
       for (var i = 0; i < ev.dataTransfer.items.length; i++) {
@@ -139,7 +142,11 @@ function handlerDrop(ev) {
       }
     }
     data.append("path",PATH)
-    sendFile(data)
+    sendFile(data).then(resolve=>{
+        if(resolve.status){
+            goPath(PATH,true)
+        }
+    })
     return false
 }
 

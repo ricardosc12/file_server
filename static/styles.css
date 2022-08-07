@@ -142,11 +142,15 @@ span {
     all: unset;
 }
 .header .searchIcon{
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 5px;
     padding: 5px;
+}
+.header .searchIcon:hover{
+    background-color: rgba(0,255,0,.2);
 }
 .header .searchIcon span {
     width: 13px;

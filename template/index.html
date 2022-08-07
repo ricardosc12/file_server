@@ -24,7 +24,7 @@
                     <span id='arrow'></span>
                 </div>
                 <div class="search"></div>
-                <div class="searchIcon">
+                <div onclick="refresh()" class="searchIcon">
                     <span id="searchIcon"></span>
                 </div>
                 <div class="options">
@@ -69,6 +69,10 @@
             document.getElementsByClassName('list')[0].innerHTML = createFile(resolve.dados)
         }
     })
+
+    function refresh(){
+        document.location.reload()
+    }
 
 </script>
 </html>
